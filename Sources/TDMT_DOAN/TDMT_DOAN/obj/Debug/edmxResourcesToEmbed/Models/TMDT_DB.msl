@@ -27,12 +27,6 @@
           <ScalarProperty Name="MA" ColumnName="MA" />
           <ScalarProperty Name="MAHOPDONG" ColumnName="MAHOPDONG" />
           <ScalarProperty Name="MASANPHAM" ColumnName="MASANPHAM" />
-          <ScalarProperty Name="SOLUONGTONKHOTOITHIEU" ColumnName="SOLUONGTONKHOTOITHIEU" />
-          <ScalarProperty Name="THOIGIANGIAOHANGCHAPNHAN" ColumnName="THOIGIANGIAOHANGCHAPNHAN" />
-          <ScalarProperty Name="THOIGIANKI" ColumnName="THOIGIANKI" />
-          <ScalarProperty Name="THOIGIANHOPTAC" ColumnName="THOIGIANHOPTAC" />
-          <ScalarProperty Name="THOIGIANCHUYENTIEN" ColumnName="THOIGIANCHUYENTIEN" />
-          <ScalarProperty Name="SOLUONGGIAOHANG" ColumnName="SOLUONGGIAOHANG" />
           <ScalarProperty Name="DAXOA" ColumnName="DAXOA" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -43,12 +37,6 @@
           <ScalarProperty Name="MA" ColumnName="MA" />
           <ScalarProperty Name="MAHOPDONG" ColumnName="MAHOPDONG" />
           <ScalarProperty Name="MASANPHAM" ColumnName="MASANPHAM" />
-          <ScalarProperty Name="SOLUONGTONKHOTOITHIEU" ColumnName="SOLUONGTONKHOTOITHIEU" />
-          <ScalarProperty Name="THOIGIANGIAOHANGCHAPNHAN" ColumnName="THOIGIANGIAOHANGCHAPNHAN" />
-          <ScalarProperty Name="THOIGIANKI" ColumnName="THOIGIANKI" />
-          <ScalarProperty Name="THOIGIANHOPTAC" ColumnName="THOIGIANHOPTAC" />
-          <ScalarProperty Name="THOIGIANCHUYENTIEN" ColumnName="THOIGIANCHUYENTIEN" />
-          <ScalarProperty Name="SOLUONGGIAOHANG" ColumnName="SOLUONGGIAOHANG" />
           <ScalarProperty Name="DAXOA" ColumnName="DAXOA" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -61,7 +49,6 @@
           <ScalarProperty Name="NGAYDATHANG" ColumnName="NGAYDATHANG" />
           <ScalarProperty Name="NGAYNHANHANG" ColumnName="NGAYNHANHANG" />
           <ScalarProperty Name="TENNGUOINHAN" ColumnName="TENNGUOINHAN" />
-          <ScalarProperty Name="MATHANHVIEN" ColumnName="MATHANHVIEN" />
           <ScalarProperty Name="DIACHINHAN" ColumnName="DIACHINHAN" />
           <ScalarProperty Name="DIENTHOAINGUOINHAN" ColumnName="DIENTHOAINGUOINHAN" />
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />

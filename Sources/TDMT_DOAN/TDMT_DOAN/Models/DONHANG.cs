@@ -24,14 +24,12 @@ namespace TDMT_DOAN.Models
         public Nullable<System.DateTime> NGAYDATHANG { get; set; }
         public Nullable<System.DateTime> NGAYNHANHANG { get; set; }
         public string TENNGUOINHAN { get; set; }
-        public Nullable<int> MATHANHVIEN { get; set; }
         public string DIACHINHAN { get; set; }
         public string DIENTHOAINGUOINHAN { get; set; }
         public Nullable<int> TRANGTHAI { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
-        public virtual THANHVIEN THANHVIEN { get; set; }
         public virtual TRANGTHAIDONHANG TRANGTHAIDONHANG { get; set; }
     }
 }

@@ -31,7 +31,7 @@
             </div>
             <div class="bottom_prod_box"></div>
             <div class="prod_details_tab"> 
-                <a href="#" title="header=[Thêm giỏ hàng] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Content/images/cart.gif")" alt="" border="0" class="left_bt" /></a> 
+                <a href="@Url.Action("AddCart", "Cart", new { id = Model.newList[i].MA})" title="header=[Thêm giỏ hàng] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Content/images/cart.gif")" alt="" border="0" class="left_bt" /></a> 
                 <a href="@Url.Action("Details", "Product", new { id = Model.newList[i].MA})" title="header=[Xem chi tiết] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Content/images/square-blue-add.gif")" alt="" border="0" class="left_bt" /></a> 
             </div>
         </div>

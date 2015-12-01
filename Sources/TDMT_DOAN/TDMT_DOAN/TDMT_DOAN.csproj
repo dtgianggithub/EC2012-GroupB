@@ -217,6 +217,7 @@
     <Compile Include="Models\LOAITHANHVIEN.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginCode.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NHACUNGCAP.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
@@ -227,6 +228,7 @@
     <Compile Include="Models\SANPHAM.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SessionHelper.cs" />
     <Compile Include="Models\THANHTOANONLINE.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
@@ -251,6 +253,7 @@
     <Compile Include="Models\TRANGTHAIDONHANG.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\CartSession.cs" />
     <Compile Include="Models\ViewModels\DetailProduct.cs" />
     <Compile Include="Models\ViewModels\HomeList.cs" />
     <Compile Include="Models\ViewModels\ManufactoryList.cs" />
@@ -263,6 +266,7 @@
     <Content Include="Content\css\blank.gif" />
     <Content Include="Content\css\iecss.css" />
     <Content Include="Content\css\iepngfix.htc" />
+    <Content Include="Content\css\Media.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style_login.css" />
     <Content Include="Content\css\table_cart.css" />
@@ -421,6 +425,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <Content Include="Areas\API\Views\web.config" />
+    <Content Include="Areas\B2B\Views\web.config" />
     <EntityDeploy Include="Models\TMDT_DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TMDT_DB.Designer.cs</LastGenOutput>
@@ -438,7 +443,6 @@
       <DependentUpon>TMDT_DB.edmx</DependentUpon>
       <LastGenOutput>TMDT_DB.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\B2B\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -485,6 +489,12 @@
     <Content Include="Views\Slide\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Cart\CartContent.cshtml" />
+    <Content Include="Views\Account\LoginSucess.cshtml" />
+    <Content Include="Views\Account\Signup.cshtml" />
+    <Content Include="Views\Account\forgotPassword.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\UpdateAccount.cshtml" />
+    <Content Include="Views\Account\SignUpSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

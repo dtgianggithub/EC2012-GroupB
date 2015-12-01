@@ -16,7 +16,6 @@ namespace TDMT_DOAN.Models
     {
         public THANHVIEN()
         {
-            this.DONHANGs = new HashSet<DONHANG>();
             this.THANHTOANONLINEs = new HashSet<THANHTOANONLINE>();
         }
     
@@ -32,7 +31,6 @@ namespace TDMT_DOAN.Models
         public Nullable<int> LoaiThanhVien { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
-        public virtual ICollection<DONHANG> DONHANGs { get; set; }
         public virtual LOAITHANHVIEN LOAITHANHVIEN1 { get; set; }
         public virtual ICollection<THANHTOANONLINE> THANHTOANONLINEs { get; set; }
     }

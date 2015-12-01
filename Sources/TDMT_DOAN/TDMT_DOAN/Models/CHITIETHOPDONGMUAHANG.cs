@@ -17,12 +17,6 @@ namespace TDMT_DOAN.Models
         public int MA { get; set; }
         public string MAHOPDONG { get; set; }
         public string MASANPHAM { get; set; }
-        public Nullable<int> SOLUONGTONKHOTOITHIEU { get; set; }
-        public Nullable<int> THOIGIANGIAOHANGCHAPNHAN { get; set; }
-        public Nullable<System.DateTime> THOIGIANKI { get; set; }
-        public Nullable<int> THOIGIANHOPTAC { get; set; }
-        public Nullable<int> THOIGIANCHUYENTIEN { get; set; }
-        public Nullable<int> SOLUONGGIAOHANG { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
         public virtual HOPDONGMUAHANG HOPDONGMUAHANG { get; set; }

@@ -1,4 +1,5 @@
-﻿
+﻿@model List<TDMT_DOAN.Models.ViewModels.CartSession>
+
 @{
     ViewBag.Title = "CartContent";
 }
@@ -13,15 +14,21 @@
         <th>Tổng tiền</th>
         <th>Xóa</th>
     </tr>
-    <tr>
+    @foreach (var item in Model)
+    {
+        <tr>
         <td>1</td>
-        <td><a href="#"  ><img width="50" style="overflow:hidden" height="70" src="@Url.Content("~/Content/images/PK001.jpg")" alt="iphone" /><br />Iphone 6ssdfsdfsdfsdfsdfsssdffffffffffffffffffffffffffffs</a></td>
+        <td><a href="#"  ><img width="50" style="overflow:hidden" height="70" src="@Url.Content("~/Content/images/PK001.jpg")" alt="iphone" /><br />@item.sp.TEN</a></td>
         <td><input type="number" name="numericInput" style="width: 50px;" min="1" max="100" value="1" /></td>
-        <td>16.000.000 VNĐ</td>
+        <td>@item.sp.DONGIABAN</td>
         <td>16.000.000 VNĐ</td>
         <td><input type="checkbox" /></td>
     </tr>
+    }
+  
 </table>
+
+
 
 <div> Tổng tiền cần thanh toán: 16.000.00 VNĐ </div>
 
