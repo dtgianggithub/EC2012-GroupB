@@ -19,7 +19,7 @@
                 <p class="remember_me">
                     <div>
                         <label>
-                            <input type="checkbox" name="remember_me" id="remember_me">
+                            @Html.CheckBoxFor(model => model.RememberMe,false)
                             Ghi nhớ tài khoản
                         </label>
                 <p><a href="@Url.Action("forgotPassword", "Account")">Quên mật khẩu? </a></p>

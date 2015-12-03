@@ -8,12 +8,10 @@
     <section class="container_login">
         <div class="login">
             <h1>Đăng kí tài khoản</h1>
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Signup", "Account", FormMethod.Post))
             {
-                @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                @Html.ValidationSummary()
                 @Html.AntiForgeryToken()
-
-
                 @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Tên đăng nhập", @type = "text", @required = "required" })
                 @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "Mật khẩu", @type = "password", @required = "required" })
                 @Html.TextBoxFor(model => model.ConfirmPassword, new { @class = "form-control", @placeholder = "Xác nhận mật khẩu", @type = "password", @required = "required" })

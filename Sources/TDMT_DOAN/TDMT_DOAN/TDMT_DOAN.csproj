@@ -163,6 +163,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\API.cs">
+      <DependentUpon>TMDT_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -172,6 +175,15 @@
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\API\APIAreaRegistration.cs" />
     <Compile Include="Areas\B2B\B2BAreaRegistration.cs" />
+    <Compile Include="Models\CHITIETDONHANG.cs">
+      <DependentUpon>TMDT_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETHOPDONGBANHANG.cs">
+      <DependentUpon>TMDT_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETHOPDONGMUAHANG.cs">
+      <DependentUpon>TMDT_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -182,24 +194,11 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SlideController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\API.cs">
-      <DependentUpon>TMDT_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CHITIETDONHANG.cs">
-      <DependentUpon>TMDT_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CHITIETHOPDONGBANHANG.cs">
-      <DependentUpon>TMDT_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CHITIETHOPDONGMUAHANG.cs">
-      <DependentUpon>TMDT_DB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DONHANG.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HOPDONGBANHANG.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
@@ -207,7 +206,6 @@
     <Compile Include="Models\HOPDONGMUAHANG.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\KHUYENMAI.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
@@ -217,18 +215,28 @@
     <Compile Include="Models\LOAITHANHVIEN.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginCode.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SessionHelper.cs" />
+    <Compile Include="Models\ViewModels\CartSession.cs" />
+    <Compile Include="Models\ViewModels\DetailProduct.cs" />
+    <Compile Include="Models\ViewModels\HomeList.cs" />
+    <Compile Include="Models\ViewModels\ManufactoryList.cs" />
+    <Compile Include="Models\ViewModels\MenuList.cs" />
+    <Compile Include="Models\ViewModels\ProductList.cs" />
     <Compile Include="Models\NHACUNGCAP.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NHASANXUAT.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\SANPHAM.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SessionHelper.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Models\THANHTOANONLINE.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
@@ -253,14 +261,6 @@
     <Compile Include="Models\TRANGTHAIDONHANG.cs">
       <DependentUpon>TMDT_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\CartSession.cs" />
-    <Compile Include="Models\ViewModels\DetailProduct.cs" />
-    <Compile Include="Models\ViewModels\HomeList.cs" />
-    <Compile Include="Models\ViewModels\ManufactoryList.cs" />
-    <Compile Include="Models\ViewModels\MenuList.cs" />
-    <Compile Include="Models\ViewModels\ProductList.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\blank.gif" />
@@ -426,23 +426,6 @@
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <Content Include="Areas\API\Views\web.config" />
     <Content Include="Areas\B2B\Views\web.config" />
-    <EntityDeploy Include="Models\TMDT_DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TMDT_DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TMDT_DB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TMDT_DB.edmx</DependentUpon>
-      <LastGenOutput>TMDT_DB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\TMDT_DB.edmx.diagram">
-      <DependentUpon>TMDT_DB.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\TMDT_DB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TMDT_DB.edmx</DependentUpon>
-      <LastGenOutput>TMDT_DB.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -495,6 +478,23 @@
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\UpdateAccount.cshtml" />
     <Content Include="Views\Account\SignUpSuccess.cshtml" />
+    <EntityDeploy Include="Models\TMDT_DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TMDT_DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TMDT_DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TMDT_DB.edmx</DependentUpon>
+      <LastGenOutput>TMDT_DB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TMDT_DB.edmx.diagram">
+      <DependentUpon>TMDT_DB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\TMDT_DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TMDT_DB.edmx</DependentUpon>
+      <LastGenOutput>TMDT_DB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

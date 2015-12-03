@@ -31,7 +31,13 @@ namespace TDMT_DOAN.Controllers
 
         public ActionResult Login()
         {
-            return View();
+            LoginViewModel loginview = new LoginViewModel();
+            if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)
+            {
+                loginview.UserName = Request.Cookies["UserName"].Value;
+                loginview.Password = Request.Cookies["Password"].Value;
+            }
+            return View(loginview);
         }
 
 
@@ -44,6 +50,11 @@ namespace TDMT_DOAN.Controllers
 
             if (password == user.MATKHAU)
             {
+                if(loginview.RememberMe == true)
+                {
+                    Response.Cookies["UserName"].Value = loginview.UserName;
+                    Response.Cookies["Password"].Value = loginview.Password;
+                }
                 SessionHelper.SetUserSession(loginview.UserName);
                 return RedirectToAction("Index", "Home");
             }
@@ -61,46 +72,36 @@ namespace TDMT_DOAN.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (register.Password == register.ConfirmPassword)
-                {
-                    THANHVIEN thanhvien = new THANHVIEN();
-                    var user = (from u in tmdt.THANHVIENs where u.TENDANGNHAP == register.UserName || u.EMAIL == register.Email select u).SingleOrDefault();
+                THANHVIEN thanhvien = new THANHVIEN();
+                var user = (from u in tmdt.THANHVIENs where u.TENDANGNHAP == register.UserName || u.EMAIL == register.Email select u).SingleOrDefault();
 
-                    if (user != null)
-                    {
-                        ModelState.AddModelError("", "Tên đăng nhập hoặc Email đã tồn tại");
-                        return View();
-                    }
-                    else
-                    {
-                        if (!login.CheckEmail(register.Email))  // Check email valid
-                        {
-                            ModelState.AddModelError("", "Email không có thật");
-                        }
-                        else
-                        {
-                            user = (from u in tmdt.THANHVIENs orderby u.MA descending select u).Take(1).SingleOrDefault();
-                            if (user == null)
-                                thanhvien.MA = 1;
-                            else
-                                thanhvien.MA = user.MA + 1;
-                            thanhvien.TENDANGNHAP = register.UserName;
-                            thanhvien.MATKHAU = login.encryptSHA(register.Password);  // Encode password
-                            thanhvien.TEN = register.Name;
-                            thanhvien.EMAIL = register.Email;
-                            tmdt.THANHVIENs.Add(thanhvien);
-                            tmdt.SaveChanges();
-                        }
-                    }
+                if (user != null)
+                {
+                    ModelState.AddModelError("", "Tên đăng nhập hoặc Email đã tồn tại");
+                    return View();
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Mật khẩu xác nhận không đúng");
+                    if (!login.CheckEmail(register.Email))  // Check email valid
+                    {
+                        ModelState.AddModelError("", "Email không có thật");
+                    }
+                    else
+                    {
+                        user = (from u in tmdt.THANHVIENs orderby u.MA descending select u).Take(1).SingleOrDefault();
+                        if (user == null)
+                            thanhvien.MA = 1;
+                        else
+                            thanhvien.MA = user.MA + 1;
+                        thanhvien.TENDANGNHAP = register.UserName;
+                        thanhvien.MATKHAU = login.encryptSHA(register.Password);  // Encode password
+                        thanhvien.TEN = register.Name;
+                        thanhvien.EMAIL = register.Email;
+                        tmdt.THANHVIENs.Add(thanhvien);
+                        tmdt.SaveChanges();
+                        ModelState.AddModelError("", "Đăng kí tài khoản thành công");
+                    }
                 }
-            }
-            else
-            {
-                ModelState.AddModelError("", "Loi cmnr");
             }
 
             return View();
@@ -132,10 +133,6 @@ namespace TDMT_DOAN.Controllers
                 else
                     ModelState.AddModelError("", "Email này chưa đăng kí tài khoản");
             }
-            else
-            {
-                ModelState.AddModelError("", "Email không hợp lệ");
-            }
             return View();
         }
 
@@ -160,22 +157,16 @@ namespace TDMT_DOAN.Controllers
 
                 if (user.MATKHAU == PassOld)
                 {
-                    if (reset.Password == reset.ConfirmPassword)
-                    {
-                        user.MATKHAU = login.encryptSHA(reset.Password);
-                        tmdt.SaveChanges();
-                        ModelState.AddModelError("", "Đổi mật khẩu thành công");
-                    }
-                    else
-                        ModelState.AddModelError("", "Mật khẩu xác nhận không đúng");
+                   user.MATKHAU = login.encryptSHA(reset.Password);
+                   tmdt.SaveChanges();
+                   ModelState.AddModelError("", "Đổi mật khẩu thành công");
+                   
                 }
                 else
                 {
                     ModelState.AddModelError("", "Mật khẩu cũ không đúng");
                 }
             }
-            else
-                ModelState.AddModelError("", "Mật khẩu ít nhất 6 kí tự");
 
             return View();
         }
@@ -210,7 +201,7 @@ namespace TDMT_DOAN.Controllers
                 tmdt.SaveChanges();
             }
 
-            return View();
+            return View(user);
         }
 
         public ActionResult SignUpSuccess()

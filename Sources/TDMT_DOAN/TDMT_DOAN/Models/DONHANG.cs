@@ -14,6 +14,7 @@ namespace TDMT_DOAN.Models
     
     public partial class DONHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DONHANG()
         {
             this.CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
@@ -29,6 +30,7 @@ namespace TDMT_DOAN.Models
         public Nullable<int> TRANGTHAI { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
         public virtual TRANGTHAIDONHANG TRANGTHAIDONHANG { get; set; }
     }

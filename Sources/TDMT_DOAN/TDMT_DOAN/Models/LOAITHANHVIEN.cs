@@ -14,6 +14,7 @@ namespace TDMT_DOAN.Models
     
     public partial class LOAITHANHVIEN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOAITHANHVIEN()
         {
             this.THANHVIENs = new HashSet<THANHVIEN>();
@@ -23,6 +24,7 @@ namespace TDMT_DOAN.Models
         public string TENLOAI { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<THANHVIEN> THANHVIENs { get; set; }
     }
 }

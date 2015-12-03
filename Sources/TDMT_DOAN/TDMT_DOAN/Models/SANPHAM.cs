@@ -14,6 +14,7 @@ namespace TDMT_DOAN.Models
     
     public partial class SANPHAM
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SANPHAM()
         {
             this.CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
@@ -37,9 +38,13 @@ namespace TDMT_DOAN.Models
         public Nullable<bool> SANPHAMBAN { get; set; }
         public Nullable<int> MAKHUYENMAI { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETHOPDONGBANHANG> CHITIETHOPDONGBANHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETHOPDONGMUAHANG> CHITIETHOPDONGMUAHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONGMUAHANG> HOPDONGMUAHANGs { get; set; }
         public virtual LOAISANPHAM LOAISANPHAM1 { get; set; }
         public virtual NHASANXUAT NHASANXUAT1 { get; set; }

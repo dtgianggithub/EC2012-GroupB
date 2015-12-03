@@ -14,6 +14,7 @@ namespace TDMT_DOAN.Models
     
     public partial class NHACUNGCAP
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHACUNGCAP()
         {
             this.HOPDONGMUAHANGs = new HashSet<HOPDONGMUAHANG>();
@@ -29,6 +30,7 @@ namespace TDMT_DOAN.Models
         public string supplier_key { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONGMUAHANG> HOPDONGMUAHANGs { get; set; }
     }
 }

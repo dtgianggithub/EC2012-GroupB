@@ -14,6 +14,7 @@ namespace TDMT_DOAN.Models
     
     public partial class HOPDONGMUAHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HOPDONGMUAHANG()
         {
             this.CHITIETHOPDONGMUAHANGs = new HashSet<CHITIETHOPDONGMUAHANG>();
@@ -31,6 +32,7 @@ namespace TDMT_DOAN.Models
         public string LINKWEBAPI { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETHOPDONGMUAHANG> CHITIETHOPDONGMUAHANGs { get; set; }
         public virtual NHACUNGCAP NHACUNGCAP1 { get; set; }
         public virtual SANPHAM SANPHAM1 { get; set; }

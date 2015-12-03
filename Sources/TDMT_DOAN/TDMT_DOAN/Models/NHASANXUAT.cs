@@ -14,6 +14,7 @@ namespace TDMT_DOAN.Models
     
     public partial class NHASANXUAT
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHASANXUAT()
         {
             this.SANPHAMs = new HashSet<SANPHAM>();
@@ -23,6 +24,7 @@ namespace TDMT_DOAN.Models
         public string TEN { get; set; }
         public Nullable<bool> DAXOA { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SANPHAM> SANPHAMs { get; set; }
     }
 }
